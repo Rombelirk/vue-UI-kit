@@ -3,6 +3,7 @@
 </template>
 
 <script>
+//test
 </script>
 
 <style lang="scss">
