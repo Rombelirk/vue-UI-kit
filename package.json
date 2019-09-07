@@ -1,0 +1,16 @@
+{
+  "name": "vue-components",
+  "version": "1.0.0",
+  "description": "A small components library for Vue.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Beloborodov",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "sass-loader": "^8.0.0"
+  }
+}
