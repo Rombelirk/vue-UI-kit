@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggle" :class="{switch: true, 'switch-toggled':toggled}">
+  <div @click="onToggle" :class="{switch: true, 'switch-toggled':toggled}">
     <div :class="{slider: true, 'slider-toggled':toggled}"></div>
   </div>
 </template>
@@ -8,32 +8,28 @@
 export default {
   name: "Switch",
   props: {
-    defaultToggle: false
-  },
-  props: {
     toggleProp: {
       type: Boolean,
       default: true
-    }
-  },
-  data() {
-    return {
-      toggled: this.toggleProp || false
-    };
-  },
-  methods: {
-    toggle() {
-      this.toggled = !this.toggled;
+    },
+    onToggle: {
+      type: Function,
+      default: ()=>null
+    },
+    toggled: {
+      type: Boolean,
+      default: false
     }
   }
 };
 </script>
 
 <style scoped lang="scss">
+@import "../../variables/variables.scss";
 .switch {
   height: 14px;
   width: 35px;
-  background-color: #9c9c9c;
+  background-color: $switch-background-color;
   cursor: pointer;
   border-radius: 500px;
   display: flex;
@@ -43,19 +39,17 @@ export default {
   .slider {
     position: absolute;
     border-radius: 50%;
-    background-color: rgb(221, 221, 221);
+    background-color: $switch-slider-background-color;
     width: 20px;
     height: 20px;
     transition: 200ms ease-out;
   }
-
   .slider-toggled {
     transform: translate(15px);
     transition: 200ms ease-out;
   }
 }
-
 .switch-toggled {
-  background-color: #acc289;
+  background-color: $switch-toggled-background-color;
 }
 </style>
